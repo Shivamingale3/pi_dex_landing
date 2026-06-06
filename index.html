@@ -26,8 +26,14 @@
   <p class="tagline">Home Server Watchman</p>
   <div class="install-bar">
     <span class="dollar">$</span>
-    <code>curl -sSL https://raw.githubusercontent.com/Shivamingale3/pi_dex/main/deploy/install.sh | sudo bash</code>
+    <code id="install-command">curl -sSL https://raw.githubusercontent.com/Shivamingale3/pi_dex/main/deploy/install.sh | sudo bash</code>
     <span class="pipe">|</span>
+    <button id="copy-btn" class="copy-btn" title="Copy command" aria-label="Copy command">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+    </button>
   </div>
   <div class="badges">
     <img id="badge-version" src="https://img.shields.io/badge/version-v1.2.5-3fb950" alt="version">
@@ -288,6 +294,23 @@
       }
     })
     .catch(err => console.error('Failed to fetch avatar:', err));
+
+  // Copy install command
+  const copyBtn = document.getElementById('copy-btn');
+  const installCmd = document.getElementById('install-command');
+  if (copyBtn && installCmd) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(installCmd.innerText).then(() => {
+        const originalHTML = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        copyBtn.classList.add('copied');
+        setTimeout(() => {
+          copyBtn.innerHTML = originalHTML;
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  }
 </script>
 
 </body>
