@@ -1,7 +1,7 @@
 :root {
   --bg: #050505;
-  --card: rgba(15, 15, 15, 0.6);
-  --border: rgba(255, 255, 255, 0.1);
+  --card: rgba(15, 15, 15, 0.3);
+  --border: rgba(255, 255, 255, 0.15);
   --accent: #ffffff;
   --text: #e6e6e6;
   --muted: #8b949e;
@@ -20,7 +20,7 @@
 }
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--text);
   font-family: var(--font);
   font-size: 14px;
@@ -87,8 +87,16 @@ a:hover {
   gap: 8px;
   background: var(--card);
   border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   border-radius: var(--radius);
   padding: 10px 16px;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   font-size: 13px;
   color: var(--muted);
 }
@@ -145,6 +153,10 @@ section h2 span {
 .monitor-card {
   background: var(--card);
   border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   border-radius: var(--radius);
   padding: 24px 16px;
   display: flex;
@@ -153,7 +165,9 @@ section h2 span {
   justify-content: center;
   gap: 16px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
 }
 
 .monitor-card:hover {
@@ -182,6 +196,10 @@ section h2 span {
   border-radius: var(--radius);
   background: var(--card);
   border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
 }
 
 .carousel-track {
@@ -266,8 +284,16 @@ section h2 span {
   gap: 12px;
   background: var(--card);
   border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   border-radius: var(--radius);
   padding: 18px 16px;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
 }
 
 .feature .icon-wrap {
@@ -303,8 +329,16 @@ section h2 span {
 
 /* ── Terminal ── */
 .terminal {
-  background: #0a0e13;
+  background: rgba(10, 14, 19, 0.4);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   border-radius: var(--radius);
   padding: 0;
   overflow: hidden;
@@ -359,6 +393,10 @@ table {
   border-collapse: collapse;
   background: var(--card);
   border: 1px solid var(--border);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   border-radius: var(--radius);
   overflow: hidden;
 }
@@ -375,6 +413,10 @@ thead th {
 
 tbody td {
   padding: 10px 16px;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
   font-size: 13px;
   border-top: 1px solid var(--border);
 }
@@ -403,4 +445,119 @@ footer a {
 
 footer .sep {
   margin: 0 8px;
+}
+
+/* ── Liquid Glass Background ── */
+.glass-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.6;
+  animation: floatOrb 25s infinite ease-in-out alternate;
+}
+
+.orb-1 {
+  width: 450px;
+  height: 450px;
+  background: rgba(255, 255, 255, 0.12);
+  top: -10%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 550px;
+  height: 550px;
+  background: rgba(200, 200, 200, 0.08);
+  bottom: -20%;
+  right: -10%;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  background: rgba(255, 255, 255, 0.06);
+  top: 40%;
+  left: 60%;
+  animation-delay: -10s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(60px, 120px) scale(1.1); }
+}
+
+/* ── About ── */
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  margin-top: 24px;
+}
+
+.about-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-header h3 {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.about-role {
+  font-size: 13px;
+  font-family: var(--font);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.about-bio {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.about-bio strong {
+  color: #ffffff;
+}
+
+.about-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--bg);
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  transition: all 0.2s;
+}
+
+.about-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  text-decoration: none;
 }

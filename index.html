@@ -6,9 +6,17 @@
 <title>PiDex — Home Server Watchman</title>
 <meta name="description" content="PiDex watches your server and alerts you on Telegram for SSH logins, Docker events, resource thresholds, and more. Single Go binary, self-updating.">
 <link rel="stylesheet" href="styles.css">
+<link rel="icon" href="icons/pidex_mascot.svg" type="image/svg+xml">
 </head>
 <body>
+  <!-- Ambient background for glass refraction -->
+  <div class="glass-background">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
+  <!-- ═══════════ NAVIGATION ═══════════ -->
 <!-- ═══════════ HERO ═══════════ -->
 <section class="hero">
   <div class="mascot">
@@ -22,7 +30,7 @@
     <span class="pipe">|</span>
   </div>
   <div class="badges">
-    <img src="https://img.shields.io/badge/version-v1.2.5-3fb950" alt="version">
+    <img id="badge-version" src="https://img.shields.io/badge/version-v1.2.5-3fb950" alt="version">
     <img src="https://img.shields.io/badge/go-1.22+-00add8?logo=go" alt="go">
     <img src="https://img.shields.io/badge/license-MIT-blue" alt="license">
     <img src="https://img.shields.io/badge/arch-amd64%20|%20arm64-8b949e" alt="arch">
@@ -225,6 +233,28 @@
 </section>
 </div>
 
+<!-- ═══════════ ABOUT ═══════════ -->
+<div class="container">
+<section id="about">
+  <h2><span>&#9656;</span> About the Author</h2>
+  <div class="about-card">
+    <div class="about-header">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <img id="author-avatar" src="https://avatars.githubusercontent.com/u/33190082?v=4" alt="Shivam Ingale" width="64" height="64" style="border-radius: 50%; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+        <div>
+          <h3>Shivam Ingale</h3>
+          <span class="about-role">Full Stack Architect & Engineer</span>
+        </div>
+      </div>
+    </div>
+    <p class="about-bio">
+      Building scalable digital infrastructure with precision and aesthetic excellence. Currently engineering solutions at <strong>Leadows Technologies</strong>. Specializing in <strong>Next.js, React, and Java Spring Boot</strong>.
+    </p>
+    <a href="https://www.shivamingale.com" target="_blank" class="about-link">View Portfolio &rarr;</a>
+  </div>
+</section>
+</div>
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer>
   <div class="container">
@@ -232,9 +262,33 @@
     <span class="sep">|</span>
     <span>MIT License</span>
     <span class="sep">|</span>
-    <span>Built with Go &bull; v1.2.5</span>
+    <span>Built with Go &bull; <span id="footer-version">v1.2.5</span></span>
   </div>
 </footer>
+
+<script>
+  // Fetch Latest PiDex Release Version from GitHub
+  fetch('https://api.github.com/repos/Shivamingale3/pi_dex/releases/latest')
+    .then(res => res.json())
+    .then(data => {
+      const version = data.tag_name;
+      if (version) {
+        document.getElementById('footer-version').innerText = version;
+        document.getElementById('badge-version').src = `https://img.shields.io/badge/version-${version}-3fb950`;
+      }
+    })
+    .catch(err => console.error('Failed to fetch release version:', err));
+
+  // Fetch GitHub Avatar (updates dynamically if changed)
+  fetch('https://api.github.com/users/Shivamingale3')
+    .then(res => res.json())
+    .then(data => {
+      if (data.avatar_url) {
+        document.getElementById('author-avatar').src = data.avatar_url;
+      }
+    })
+    .catch(err => console.error('Failed to fetch avatar:', err));
+</script>
 
 </body>
 </html>
