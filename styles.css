@@ -1,0 +1,400 @@
+:root {
+  --bg: #0d1117;
+  --card: #161b22;
+  --border: #30363d;
+  --accent: #3fb950;
+  --text: #c9d1d9;
+  --muted: #8b949e;
+  --danger: #f85149;
+  --warn: #d29922;
+  --radius: 8px;
+  --font: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── Hero ── */
+.hero {
+  text-align: center;
+  padding: 64px 20px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(63, 185, 80, 0.06) 0%, transparent 70%);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero .mascot {
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--text) 30%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .tagline {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 8px 0 28px;
+}
+
+.install-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.install-bar .dollar {
+  color: var(--accent);
+}
+
+.install-bar .pipe {
+  color: var(--muted);
+}
+
+.install-bar code {
+  font-size: 13px;
+}
+
+/* ── Badges ── */
+.badges {
+  text-align: center;
+  margin-top: 24px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.badges img {
+  height: 20px;
+}
+
+/* ── Section Headers ── */
+section {
+  padding: 48px 0;
+  border-top: 1px solid var(--border);
+}
+
+section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+section h2 span {
+  color: var(--accent);
+}
+
+/* ── Monitor Grid ── */
+.monitor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 12px;
+}
+
+.monitor-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 12px 16px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.monitor-card:hover {
+  border-color: var(--accent);
+}
+
+.monitor-card img {
+  display: block;
+  margin: 0 auto 10px;
+  width: 28px;
+  height: 28px;
+}
+
+.monitor-card span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── Carousel ── */
+.carousel-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.carousel-track {
+  display: flex;
+  width: 300%;
+  animation: slide 12s infinite;
+}
+
+.carousel-slide {
+  width: 33.333%;
+  flex-shrink: 0;
+  padding: 28px 24px;
+}
+
+@keyframes slide {
+  0%, 28% {
+    transform: translateX(0);
+  }
+  33%, 61% {
+    transform: translateX(-33.333%);
+  }
+  66%, 94% {
+    transform: translateX(-66.666%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.tg-bubble {
+  max-width: 380px;
+}
+
+.tg-header {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.tg-header .green {
+  color: var(--accent);
+}
+
+.tg-header .orange {
+  color: var(--warn);
+}
+
+.tg-header .red {
+  color: var(--danger);
+}
+
+.tg-body {
+  color: var(--text);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.tg-meta {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.tg-footer {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+}
+
+/* ── Features ── */
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 16px;
+}
+
+.feature .icon-wrap {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.feature .icon-wrap img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.feature .text {
+  font-size: 13px;
+}
+
+.feature .label {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.feature .desc {
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 560px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Terminal ── */
+.terminal {
+  background: #0a0e13;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+}
+
+.terminal .bar {
+  background: var(--card);
+  padding: 8px 14px;
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.terminal .bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.terminal .bar .r {
+  background: var(--danger);
+}
+
+.terminal .bar .y {
+  background: var(--warn);
+}
+
+.terminal .bar .g {
+  background: var(--accent);
+}
+
+.terminal pre {
+  padding: 18px 20px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+  color: var(--text);
+}
+
+.terminal .prompt {
+  color: var(--accent);
+}
+
+.terminal .comment {
+  color: var(--muted);
+}
+
+/* ── Commands Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+thead th {
+  background: var(--card);
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody td {
+  padding: 10px 16px;
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+}
+
+tbody td:first-child {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+tbody td:last-child {
+  color: var(--muted);
+}
+
+/* ── Footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer a {
+  color: var(--muted);
+}
+
+footer .sep {
+  margin: 0 8px;
+}
