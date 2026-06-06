@@ -1,0 +1,89 @@
+interface IconProps {
+  size?: number;
+  className?: string;
+}
+
+export default function Mascot({ size = 100, className }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+    >
+      <path
+        d="M50 8 L80 45 L70 55 L50 40 L30 55 L20 45 Z"
+        fill="#161b22"
+        stroke="#3fb950"
+        strokeWidth="1.8"
+        strokeLinejoin="round"
+      />
+      <circle cx="39" cy="33" r="6" fill="#0d1117" stroke="#3fb950" strokeWidth="1.5" />
+      <circle cx="61" cy="33" r="6" fill="#0d1117" stroke="#3fb950" strokeWidth="1.5" />
+      <circle cx="39" cy="33" r="3.5" fill="#3fb950" />
+      <circle cx="61" cy="33" r="3.5" fill="#3fb950" />
+      <circle cx="37.5" cy="31.5" r="1.2" fill="#fff" opacity="0.6" />
+      <circle cx="59.5" cy="31.5" r="1.2" fill="#fff" opacity="0.6" />
+      <path
+        d="M47 38 L50 44 L53 38"
+        fill="none"
+        stroke="#3fb950"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M35 52 C30 75,35 90,50 90 C65 90,70 75,65 52"
+        fill="#161b22"
+        stroke="#3fb950"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M35 58 L20 52 L28 65"
+        fill="none"
+        stroke="#3fb950"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M65 58 L80 52 L72 65"
+        fill="none"
+        stroke="#3fb950"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M80 52 L90 46 L82 56"
+        fill="none"
+        stroke="#3fb950"
+        strokeWidth="1.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="18" cy="42" r="4" fill="none" stroke="#3fb950" strokeWidth="1.2" />
+      <path d="M19 45 L19 48 M17 48 L21 48" stroke="#3fb950" strokeWidth="1.2" strokeLinecap="round" />
+      <rect x="30" y="88" width="40" height="6" rx="2" fill="#161b22" stroke="#3fb950" strokeWidth="1" />
+      <circle cx="38" cy="91" r="1" fill="#3fb950" />
+      <circle cx="62" cy="91" r="1" fill="#3fb950" />
+      <path
+        d="M12 40 Q10 43,12 46"
+        fill="none"
+        stroke="#3fb950"
+        strokeWidth="0.8"
+        opacity="0.5"
+      />
+      <path
+        d="M8 38 Q6 43,8 48"
+        fill="none"
+        stroke="#3fb950"
+        strokeWidth="0.6"
+        opacity="0.3"
+      />
+    </svg>
+  );
+}

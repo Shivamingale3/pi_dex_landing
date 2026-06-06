@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pidex-bg: #0d1117;
+  --color-pidex-card: #161b22;
+  --color-pidex-border: #30363d;
+  --color-pidex-accent: #3fb950;
+  --color-pidex-text: #c9d1d9;
+  --color-pidex-muted: #8b949e;
+  --color-pidex-danger: #f85149;
+  --color-pidex-warn: #d29922;
+  --color-pidex-terminal: #0a0e13;
+
+  --font-sans: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius: 8px;
+  --animate-slide: slide 12s infinite;
+}
+
+@keyframes slide {
+  0%,
+  28% {
+    transform: translateX(0);
+  }
+  33%,
+  61% {
+    transform: translateX(-33.333%);
+  }
+  66%,
+  94% {
+    transform: translateX(-66.666%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+body {
+  background-color: var(--color-pidex-bg);
+  color: var(--color-pidex-text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-pidex-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
