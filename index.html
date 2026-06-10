@@ -223,19 +223,21 @@
 <div class="container">
 <section>
   <h2><span>&#9656;</span> Commands</h2>
-  <table>
-    <thead><tr><th>Command</th><th>What it does</th></tr></thead>
-    <tbody>
-      <tr><td>pidex run</td><td>Start the daemon (runs as pidex user via systemd)</td></tr>
-      <tr><td>pidex setup</td><td>Interactive configuration wizard (9 settings)</td></tr>
-      <tr><td>pidex test &lt;event&gt;</td><td>Send a test notification &mdash; ssh-login, ssh-fail, sudo-used, docker-down, reboot</td></tr>
-      <tr><td>pidex test &lt;event&gt; --dry-run</td><td>Print event without sending to Telegram</td></tr>
-      <tr><td>pidex update</td><td>Check GitHub for the latest release and self-update</td></tr>
-      <tr><td>pidex uninstall</td><td>Remove PiDex, systemd services, and config</td></tr>
-      <tr><td>pidex version</td><td>Show installed version</td></tr>
-      <tr><td>pidex help</td><td>Show usage</td></tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table>
+      <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td>pidex run</td><td>Start the daemon (runs as pidex user via systemd)</td></tr>
+        <tr><td>pidex setup</td><td>Interactive configuration wizard (9 settings)</td></tr>
+        <tr><td>pidex test &lt;event&gt;</td><td>Send a test notification &mdash; ssh-login, ssh-fail, sudo-used, docker-down, reboot</td></tr>
+        <tr><td>pidex test &lt;event&gt; --dry-run</td><td>Print event without sending to Telegram</td></tr>
+        <tr><td>pidex update</td><td>Check GitHub for the latest release and self-update</td></tr>
+        <tr><td>pidex uninstall</td><td>Remove PiDex, systemd services, and config</td></tr>
+        <tr><td>pidex version</td><td>Show installed version</td></tr>
+        <tr><td>pidex help</td><td>Show usage</td></tr>
+      </tbody>
+    </table>
+  </div>
 </section>
 </div>
 
@@ -245,7 +247,7 @@
   <h2><span>&#9656;</span> About the Author</h2>
   <div class="about-card">
     <div class="about-header">
-      <div style="display: flex; align-items: center; gap: 16px;">
+      <div class="about-author-info">
         <img id="author-avatar" src="https://avatars.githubusercontent.com/u/33190082?v=4" alt="Shivam Ingale" width="64" height="64" style="border-radius: 50%; border: 1px solid var(--border); box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
         <div>
           <h3>Shivam Ingale</h3>
